@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "table",
+      "direction": "in",
+      "name": "inputTable",
+      "tableName": "Collections",
+      "partitionKey": "tzelin-hrcpin",
+      "take": "200",
+      "connection": "collectionsappsa_STORAGE"
+    }
+  ],
+  "scriptFile": "../dist/GetAllItems/index.js"
+}
