@@ -7,7 +7,8 @@
       "name": "req",
       "methods": [
         "get"
-      ]
+      ],
+      "route": "GetThumbnails/{filename}"
     },
     {
       "type": "http",
@@ -15,14 +16,13 @@
       "name": "res"
     },
     {
-      "type": "table",
+      "type": "blob",
       "direction": "in",
-      "name": "inputTable",
-      "tableName": "Collections",
-      "partitionKey": "tzelin-hrcpin",
-      "take": "200",
+      "name": "inputBlob",
+      "dataType": "binary",
+      "path": "pinimages/{filename}",
       "connection": "collectionsappsa_STORAGE"
     }
   ],
-  "scriptFile": "../dist/GetAllItems/index.js"
+  "scriptFile": "../dist/GetThumbnail/index.js"
 }
